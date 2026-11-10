@@ -69,3 +69,7 @@ def test_anemometer_reports_all_operating_states():
     assert check_chairlift_anemometer([]) == "NO_DATA"
     assert check_chairlift_anemometer([[45, 20, 46, 20]]) == "SAFE_OPERATION"
     assert check_chairlift_anemometer([[46, 47]]) == "SUSPEND_LIFT"
+
+
+def test_anemometer_accepts_multiple_lifts():
+    assert check_chairlift_anemometer([[20], [30, 45]]) == "SAFE_OPERATION"
