@@ -58,5 +58,6 @@ def test_audit_review_and_zero_sales_returns():
 
 def test_anemometer_branches():
     assert check_chairlift_anemometer(None) == "NO_DATA"
+    assert check_chairlift_anemometer([[]]) == "SAFE_OPERATION"
     assert check_chairlift_anemometer([[46, 20, 47, 20]]) == "SAFE_OPERATION"
     assert check_chairlift_anemometer([[45, 46, 47]]) == "SUSPEND_LIFT"
